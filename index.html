@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt</title>
+    <style>
+        body {
+            background-color: #555B61; /* Couleur de fond grise */
+            color: #fff; /* Couleur du texte blanc */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #header {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #content {
+            display: flex;
+            align-items: center;
+            flex-direction: column; /* Changement de la direction de la colonne */
+        }
+
+        #text {
+            max-width: 600px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #text p {
+            margin: 0 0 15px;
+            font-size: 18px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* Permettre le passage à la ligne pour aligner la quatrième image en bas */
+            justify-content: center; /* Centrer les images horizontalement */
+        }
+
+        .image-container img {
+            height: auto;
+            border-radius: 8px;
+            margin: 0 10px 20px; /* Marge entre les images, avec une marge inférieure pour les images de taille normale */
+            max-width: 100%;
+        }
+
+        .jesus-image {
+            max-height: 400px; /* Taille maximale de la hauteur de l'image jesus.png */
+        }
+
+        .aust-image {
+            max-height: 200px; /* Taille maximale de la hauteur de l'image aust.png */
+        }
+
+        .empire-image {
+            max-height: 250px; /* Taille maximale de la hauteur de l'image empire.png */
+        }
+        .nouvelle-image {
+            max-height: 150px; /* Ajustez la taille maximale selon vos préférences */
+        }
+#reponse-form {
+            text-align: center;
+        }
+
+        #reponse-input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        #reponse-button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+<!-- Rubrique pour écrire une réponse -->
+    <div id="reponse-form">
+        <label for="reponse-input"></label>
+        <input type="text" id="reponse-input" placeholder="Enter a country">
+        <button id="reponse-button" onclick="verifierReponse()">OK</button>
+    </div>
+    <div id="header">
+        <p>I dug everywhere, EVERYWHERE and still haven't found that treasure.</p>
+        <p>Yet I'm sure that these places have something to do with all this.</p>
+    </div>
+
+    <div id="content">
+
+        <div class="image-container">
+            <img src="jesus.png" alt="Treasure Map" class="jesus-image">
+            <img src="aust.png" alt="Second Image" class="aust-image">
+            <img src="empire.png" alt="Third Image" class="empire-image">
+            <img src="partheon.png" alt="Nouvelle Image" class="nouvelle-image">
+            
+          
+        </div>
+    </div>
+ <script>
+        function verifierReponse() {
+            var reponse = document.getElementById('reponse-input').value.toLowerCase();
+
+            if (reponse === 'mali') {
+                // Redirection vers un autre lien si la réponse est "leo" ou "léo"
+                window.location.href = 'two.html';
+            } else {
+                // Autre action en fonction de la réponse
+                alert("It's not the good word.");
+            }
+        }
+    </script>
+</body>
+</html>

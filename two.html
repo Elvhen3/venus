@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page avec Image et Réponse</title>
+    <style>
+        body {
+            background-color: #334076; /* Couleur de fond grise /
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; / 100% de la hauteur de la vue */
+        }
+
+        #contenu {
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #reponse-form {
+            text-align: center;
+        }
+
+        #reponse-input {
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        #reponse-button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenu">
+        <img src="Senigme.png" alt="Votre image">
+    </div>
+
+    <!-- Rubrique pour écrire une réponse -->
+    <div id="reponse-form">
+        <label for="reponse-input"></label>
+        <input type="text" id="reponse-input" placeholder="">
+        <button id="reponse-button" onclick="verifierReponse()">OK</button>
+    </div>
+
+    <script>
+        function verifierReponse() {
+            var reponse = document.getElementById('reponse-input').value.toLowerCase();
+
+            if (reponse === 'leo' || reponse === 'léo') {
+                // Redirection vers un autre lien si la réponse est "leo" ou "léo"
+                window.location.href = 'T.html';
+            } else {
+                // Autre action en fonction de la réponse
+                alert("It's not the good word.");
+            }
+        }
+    </script>
+</body>
+</html>
